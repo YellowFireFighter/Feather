@@ -3,10 +3,10 @@
 local oldhook
 oldhook = hookfunction(game.HttpGetAsync, function(self, ...)
     local args = {...}
-
+    print(args[1])
     if string.find(args[1], "pastebin") or string.find(args[1], "heads/main/wl") then
         return 'return {["❤️ Chronos.rip ❤️"] = game:GetService("RbxAnalyticsService"):GetClientId()}'
-    elseif string.find(args[1], "main/linoria") then
+    elseif string.find(args[1], "main/modded") then
         return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/UI")
     elseif string.find(args[1], "themesv7") then
         return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/Themes")
@@ -14,9 +14,15 @@ oldhook = hookfunction(game.HttpGetAsync, function(self, ...)
         return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/SaveManager")
     elseif string.find(args[1], "main/ser") then
         return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/UI2")
+    elseif string.find(args[1], "main/Library.lua") then
+        return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/UI3")
+    elseif string.find(args[1], "main/theme") then
+        return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/Themes2")
+    else
+        print("Unhooked Request: " .. args[1])
     end
 
-    return oldhook(self, ...)
+    return
 end)
 
 if game.GameId == 3317064564 then -- Centaura
@@ -25,4 +31,8 @@ elseif game.GameId == 1163811077 then -- Deadzone
     loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/Deadzone"))()
 elseif game.GameId == 115797356 then -- Counterblox
     loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/Counterblox"))()
+elseif game.GameId == 6035872082 then -- Rivals
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/Rivals"))()
+elseif game.GameId == 2862098693 then -- Project Delta
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/PD"))()
 end
