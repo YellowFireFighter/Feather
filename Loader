@@ -1,1 +1,28 @@
+-- Sorry i was bored 😭😭😭
 
+local oldhook
+oldhook = hookfunction(game.HttpGetAsync, function(self, ...)
+    local args = {...}
+
+    if string.find(args[1], "pastebin") or string.find(args[1], "heads/main/wl") then
+        return 'return {["❤️ Chronos.rip ❤️"] = game:GetService("RbxAnalyticsService"):GetClientId()}'
+    elseif string.find(args[1], "main/linoria") then
+        return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/UI")
+    elseif string.find(args[1], "themesv7") then
+        return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/Themes")
+    elseif string.find(args[1], "SaveManager") then
+        return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/SaveManager")
+    elseif string.find(args[1], "main/ser") then
+        return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/UI2")
+    end
+
+    return oldhook(self, ...)
+end)
+
+if game.GameId == 3317064564 then -- Centaura
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/Centaura"))()
+elseif game.GameId == 1163811077 then -- Deadzone
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/Deadzone"))()
+elseif game.GameId == 115797356 then -- Counterblox
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/Counterblox"))()
+end
