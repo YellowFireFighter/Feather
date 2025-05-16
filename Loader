@@ -6,7 +6,7 @@ oldhook = hookfunction(game.HttpGetAsync, function(self, ...)
     print(args[1])
     if string.find(args[1], "pastebin") or string.find(args[1], "heads/main/wl") then
         return 'return {["❤️ Chronos.rip ❤️"] = game:GetService("RbxAnalyticsService"):GetClientId()}'
-    elseif string.find(args[1], "main/modded") then
+    elseif string.find(args[1], "main/modded") or string.find(args[1], "main/linoria") then
         return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/UI")
     elseif string.find(args[1], "themesv7") then
         return game:HttpGet("https://raw.githubusercontent.com/YellowFireFighter/Feather/refs/heads/main/Themes")
