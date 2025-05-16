@@ -1,4 +1,4 @@
--- Sorry i was bored 😭😭😭
+-- What the helly
 
 local oldhook
 oldhook = hookfunction(game.HttpGetAsync, function(self, ...)
